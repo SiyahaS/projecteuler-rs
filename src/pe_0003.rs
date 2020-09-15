@@ -19,9 +19,42 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-#[cfg(feature = "pe_0001")]
-mod pe_0001;
-#[cfg(feature = "pe_0002")]
-mod pe_0002;
-#[cfg(feature = "pe_0003")]
-mod pe_0003;
+use std::convert::TryFrom;
+use primal::Primes;
+
+#[allow(dead_code)]
+pub fn largest_prime_factor(number: u64) -> u64 {
+    let mut primes = Primes::all();
+    let mut n = number;
+    let mut largest_prime: u64 = 0;
+
+    let mut prime = u64::try_from(primes.next().unwrap()).unwrap();
+    while n != 1  {
+        largest_prime = if n % prime == 0 {
+            n /= prime;
+            prime
+        } else {
+            prime = u64::try_from(primes.next().unwrap()).unwrap();
+            largest_prime
+        };
+    }
+
+    if largest_prime == 0 { number } else { largest_prime }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::largest_prime_factor;
+
+    #[cfg(feature = "pe_0003")]
+    #[test]
+    fn largest_prime_factor_of_13_195() {
+        assert_eq!(29, largest_prime_factor(13_195));
+    }
+
+    #[cfg(feature = "pe_0003")]
+    #[test]
+    fn largest_prime_factor_of_600_851_475_143 () {
+        assert_eq!(6857, largest_prime_factor(600_851_475_143));
+    }
+}
