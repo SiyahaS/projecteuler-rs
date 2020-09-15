@@ -6,7 +6,7 @@ pub fn multiples_of_3_and_5(i: u32) -> u32 {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::multiples_of_3_and_5;
 
     #[cfg(feature = "pe_0001")]
     #[test]
