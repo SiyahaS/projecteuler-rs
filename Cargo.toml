@@ -7,7 +7,7 @@ authors = ["Yakup TÜRKAN"]
 edition = "2018"
 license = "MIT"
 readme = "README.md"
-homepage = "yakupturkan.com.tr/showcase/projecteuler-rs"
+homepage = "https://yakupturkan.com.tr/showcase/projecteuler-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
