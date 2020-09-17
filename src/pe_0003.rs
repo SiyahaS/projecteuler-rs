@@ -22,6 +22,13 @@
 use std::convert::TryFrom;
 use primal::Primes;
 
+/// Finds largest prime factor of a given number.
+/// 
+/// A naive implementation of finding prime factors of a given number. Iterates
+/// over all of the prime numbers till the given number is 1.
+/// 
+/// For example prime factors of `13195` are `5, 7, 13 and 29` and the largest of
+/// it is `29`.
 #[allow(dead_code)]
 pub fn largest_prime_factor(number: u64) -> u64 {
     let mut primes = Primes::all();

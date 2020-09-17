@@ -1,8 +1,13 @@
 [package]
 name = "projecteuler_rs"
+description = "Project Euler solutions implemented in Rust"
+repository = "https://github.com/SiyahaS/projecteuler_rs"
 version = "0.1.0"
-authors = ["Yakup TURKAN"]
+authors = ["Yakup TÜRKAN"]
 edition = "2018"
+license = "MIT"
+readme = "README.md"
+homepage = "yakupturkan.com.tr/showcase/projecteuler-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

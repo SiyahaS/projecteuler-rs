@@ -20,6 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/// Finds sum of event fibonacci numbers till given limit.
+/// 
+/// For example fibonacci numbers lower than 90 are `1, 2, 3, 5, 8, 13, 21, 34, 55,
+///  89` and sum of even fibonacci numbers are `44`.
 #[allow(dead_code)]
 pub fn even_fibonacci_numbers(limit: u32) -> u32 {
     let mut fibonacci = (1, 2);

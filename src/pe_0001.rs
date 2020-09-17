@@ -20,9 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-/// Finds sum of multiples of 3 and 5 till the given number
+/// Finds sum of multiples of 3 or 5 till the given number
+/// 
+/// For example natural numbers till 10 that are multiples of 3 or 5 are `3, 5, 6,
+///  9` and sum is `44`.
 #[allow(dead_code)]
-pub fn multiples_of_3_and_5(i: u32) -> u32 {
+pub fn multiples_of_3_or_5(i: u32) -> u32 {
     (0..i).filter(|x| x % 3 == 0 || x % 5 == 0).sum::<u32>()
 }
 
@@ -33,18 +36,18 @@ mod tests {
     #[cfg(feature = "pe_0001")]
     #[test]
     fn till_10() {
-        assert_eq!(23, multiples_of_3_and_5(10))
+        assert_eq!(23, multiples_of_3_or_5(10))
     }
     
     #[cfg(feature = "pe_0001")]
     #[test]
     fn till_100() {
-        assert_eq!(2318, multiples_of_3_and_5(100))
+        assert_eq!(2318, multiples_of_3_or_5(100))
     }
 
     #[cfg(feature = "pe_0001")]
     #[test]
     fn till_1000() {
-        assert_eq!(233168, multiples_of_3_and_5(1000))
+        assert_eq!(233168, multiples_of_3_or_5(1000))
     }
 }
